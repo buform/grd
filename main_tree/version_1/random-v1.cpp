@@ -5,42 +5,42 @@
 
 using namespace std;
 
-void liczba(int x);
+void digit(int x);
 void plik(int x, int tab[]);
 
 int main(){
 	int x=0;
-	cout << "Podaj ilosc [maksymalnie 100]: ";
+	cout << "Enter how many elements do you need? [max 100] ";
 	cin >> x;
-	liczba(x);
+	digit(x);
 	return 0;
 }
 
-void liczba(int x){
-	int numer[100];
+void digit(int x){
+	int num[100];
 	srand((unsigned int)time(NULL));
 
 	if (x > 100){
-		cout << "Za duzo elementow!";
+		cout << "To many elements";
 		return;
 	}
 	
 	for(int i=0; i<x; i++){
-		numer[i]=rand();
+		num[i]=rand();
 	}
-	plik(x, numer);	
+	plik(x, num);	
 }
 
 void plik(int x, int tab[]){
-	ofstream plik("wynik.txt");
+	ofstream plik("return.txt");
 	if(plik.is_open()){
 		for(int i=0; i<x; i++){
 			plik << tab[i] << endl;
 		}
-		cout << "\nLiczby zapisano do pliku\n";
+		cout << "\nThe file is saved.\n";
 	}
 
 	else{
-	cout << "\nBlad: nie mozna otworzyc pliku do zapisu\n";
+	cout << "\nError, cannot open file!\n";
 	}
 }
