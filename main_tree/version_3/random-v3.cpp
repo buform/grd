@@ -27,7 +27,7 @@ void make_digits(){
 	const int max_amount = 1000000; //6 zero
 	const int max_lenght = 10;
 
-	srand((unsigned)time(NULL));
+	srand((unsigned int)time(NULL));
 
 	cout << "Enter amount of random digits - "; 
 	cin >> amount_digits;
