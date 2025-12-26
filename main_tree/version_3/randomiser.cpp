@@ -14,6 +14,8 @@ int main(){
 	std::cout << "= SIMPLE ALGORITHM TO GENERATE RANDOM DIGITS IN C++ =\n";
 	std::cout << "=====================================================\n";
 
+	srand((unsigned int)time(nullptr));
+
 	generateRandomNumbers();
 
 	return 0;
@@ -24,8 +26,6 @@ void generateRandomNumbers(){
 	int amount_digits, lenght_digits, value;
 	const int max_amount = 1000000; //6 zero
 	const int max_lenght = 10;
-
-	srand((unsigned int)time(NULL));
 
 	std::cout << "Enter amount of random digits - "; 
 
