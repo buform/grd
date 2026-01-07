@@ -68,8 +68,9 @@ void saveToFile(Node* head, int size, const std::string& file_name) {
 	Node* tmp = head;
 
 	if (file.is_open()) {
-		for (int i = 0; i < size; i++) {
-			file << i + 1 << "\t" << tmp->data << "\n";
+		int i = 1;
+		while (tmp != nullptr) {
+			file << i++ << "\t" << tmp->data << "\n";
 			tmp = tmp->next;
 		}
 		file.seekp(0, std::ios::end);
